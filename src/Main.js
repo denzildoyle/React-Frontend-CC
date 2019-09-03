@@ -2,23 +2,39 @@ import React, { Component } from "react";
 import Repo from "./components/Repo";
 import "./Main.scss";
 
-const API =
-  "https://api.github.com/search/repositories?q=sort=stars&order=desc";
-
 export default class Main extends Component {
   state = {
     items: [],
+    page: 1,
+    perPage: 5,
     isLoading: true,
     error: ""
   };
 
   componentDidMount() {
+    this.loadRepos();
+    this.scrollListener = window.addEventListener("scroll", e => {
+      this.handleScroll(e);
+    });
+  }
+
+  handleScroll = e => {
+    const bottom =
+      e.target.scrollingElement.scrollHeight - e.target.scrollingElement.scrollTop === e.target.scrollingElement.clientHeight;
+    if (bottom) {
+      this.loadMore()
+    }
+  };
+
+  loadRepos = () => {
+    const { page, items, perPage} = this.state;
+    const API = `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=${page}&per_page=${perPage}`;
     fetch(API)
       .then(response => response.json())
       .then(data => {
         this.setState({
-          items: data.items,
-          isLoading: false
+          items: [...items, ...data.items],
+          isLoading: false,
         });
       })
       .catch(error =>
@@ -27,6 +43,13 @@ export default class Main extends Component {
           isLoading: true
         })
       );
+  };
+
+  loadMore = () => {
+    this.setState({
+      page: this.state.page + 1
+    })
+    this.loadRepos();
   }
 
   render() {
@@ -37,7 +60,7 @@ export default class Main extends Component {
             this.state.items.map(item => {
               return (
                 <Repo
-                  key={item.id}
+                  key={item.node_id}
                   description={item.description}
                   avatar={item.owner.avatar_url}
                   name={item.name}
