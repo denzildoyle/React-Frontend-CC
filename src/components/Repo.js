@@ -1,6 +1,10 @@
 import React from "react";
+import Moment from "moment";
 import "./Repo.scss";
 
+function timeAgo(date) {
+  return Moment(date).fromNow();
+}
 export default function Repo(props) {
   return (
     <div className="repo">
@@ -14,7 +18,7 @@ export default function Repo(props) {
           <span className="label tag stars">Stars: {props.stars}</span>
           <span className="label tag issues">Issues: {props.issues}</span>
           <small className="label submitted-date">
-            Submitted {props.updateDate} by <b>{props.owner}</b>
+            Submitted {timeAgo(props.updateDate)} by <b>{props.owner}</b>
           </small>
         </div>
       </div>
