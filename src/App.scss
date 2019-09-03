@@ -1,0 +1,70 @@
+.repo {
+  margin: 15px;
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(50, 50, 93, .1);
+  border-radius: 3px;
+}
+
+.repo-details {
+  flex: 10;
+  padding: 15px 15px 30px 15px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.repo-avatar {
+  flex: 2;
+  display: flex;
+  align-items: center;
+
+  /* Add this */
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 50%;
+  }
+}
+
+.repo-info {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+
+  .label {
+    margin-right: 15px;
+    padding: 4px 0;
+    line-height: 1;
+
+    &.tag {
+      padding: 4px 12px;
+      border-radius: 3px;
+      color: #1b1e21;
+      background-color: #d6d8d9;
+      border-color: #c6c8ca;
+    }
+
+    &.issues {
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
+
+    &.stars {
+      color: #856404;
+      background-color: #fff3cd;
+      border-color: #ffeeba;
+    }
+
+    &.submitted-date {
+      color: #818182;
+    }
+  }
+}
