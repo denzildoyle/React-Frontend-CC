@@ -7,7 +7,9 @@ const API =
 
 export default class App extends Component {
   state = {
-    items: []
+    items: [],
+    isLoading: true,
+    error: ""
   };
 
   componentDidMount() {
@@ -15,29 +17,41 @@ export default class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          items: data.items
+          items: data.items,
+          isLoading: false
         });
-      });
+      })
+      .catch(error =>
+        this.setState({
+          error: error,
+          isLoading: true
+        })
+      );
   }
 
   render() {
     return (
       <main className="main-container">
         <div>
-          {this.state.items.map(item => {
-            return (
-              <Repo
-                key={item.id}
-                description={item.description}
-                avatar={item.owner.avatar_url}
-                name={item.name}
-                issues={item.open_issues_count}
-                stars={item.stargazers_count}
-                owner={item.owner.login}
-                updateDate={item.updated_at}
-              />
-            );
-          })}
+          {!this.state.isLoading ? (
+            this.state.items.map(item => {
+              return (
+                <Repo
+                  key={item.id}
+                  description={item.description}
+                  avatar={item.owner.avatar_url}
+                  name={item.name}
+                  issues={item.open_issues_count}
+                  stars={item.stargazers_count}
+                  owner={item.owner.login}
+                  updateDate={item.updated_at}
+                />
+              );
+            })
+          ) : (
+            // If there is a delay in data, let's let the user know it's loading
+            <h3>Loading...</h3>
+          )}
         </div>
       </main>
     );
