@@ -17,9 +17,9 @@ export default function Repo(props) {
         <div className="repo-info">
           <span className="label tag stars">Stars: {props.stars}</span>
           <span className="label tag issues">Issues: {props.issues}</span>
-          <small className="label submitted-date">
-            Submitted {timeAgo(props.updateDate)} by <b>{props.owner}</b>
-          </small>
+          <span className="label submitted-date">
+            submitted {timeAgo(props.updateDate)} by <b>{props.owner}</b>
+          </span>
         </div>
       </div>
     </div>

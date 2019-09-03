@@ -42,6 +42,7 @@
         margin-right: 15px;
         padding: 4px 0;
         line-height: 1;
+        font-size: 14px;
 
         &.tag {
             padding: 4px 12px;
@@ -66,5 +67,27 @@
         &.submitted-date {
             color: #818182;
         }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .repo {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #f6f9fc
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .repo-avatar {
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .repo-avatar {
+        display: none;
     }
 }
