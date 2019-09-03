@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Repo from "./components/Repo";
-import "./App.scss";
+import "./Main.scss";
 
 const API =
   "https://api.github.com/search/repositories?q=sort=stars&order=desc";
 
-export default class App extends Component {
+export default class Main extends Component {
   state = {
     items: [],
     isLoading: true,
