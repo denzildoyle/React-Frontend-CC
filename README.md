@@ -33,6 +33,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## Dependencies
+
+This project uses:
+
+-   [moment](https://momentjs.com/): to show how much days ago the repo was updated
+-   [prop-types](https://reactjs.org/docs/typechecking-with-proptypes.html): to type check the props passed to the <Repo/> component
+-   [sass](https://sass-lang.com/install): to style web-app
+
 ## License
 
 (The MIT License)
