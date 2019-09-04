@@ -1,5 +1,6 @@
 import React from "react";
 import Moment from "moment";
+import PropTypes from 'prop-types';
 import "./Repo.scss";
 
 function timeAgo(date) {
@@ -25,3 +26,14 @@ export default function Repo(props) {
     </div>
   );
 }
+
+Repo.propTypes = {
+  key: PropTypes.number,
+  description: PropTypes.string,
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  issues: PropTypes.number,
+  stars: PropTypes.number,
+  owner: PropTypes.string,
+  updateDate: PropTypes.string
+};
