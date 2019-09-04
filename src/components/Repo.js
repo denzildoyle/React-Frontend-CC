@@ -28,7 +28,6 @@ export default function Repo(props) {
 }
 
 Repo.propTypes = {
-  key: PropTypes.number,
   description: PropTypes.string,
   avatar: PropTypes.string,
   name: PropTypes.string,
