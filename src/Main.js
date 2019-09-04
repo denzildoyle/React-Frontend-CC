@@ -26,17 +26,21 @@ export default class Main extends Component {
     }
   };
 
+  // Load data from Github API
   loadRepos = () => {
     const { page, items, perPage} = this.state;
+    // Pass page number and number per page to API
     const API = `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=${page}&per_page=${perPage}`;
     fetch(API)
       .then(response => response.json())
       .then(data => {
+        // Set data in json response to state
         this.setState({
           items: [...items, ...data.items],
           isLoading: false,
         });
       })
+      // Handle errors
       .catch(error =>
         this.setState({
           error: error,
@@ -45,6 +49,7 @@ export default class Main extends Component {
       );
   };
 
+  // Increase page count and add more items to states  
   loadMore = () => {
     this.setState({
       page: this.state.page + 1
@@ -52,6 +57,7 @@ export default class Main extends Component {
     this.loadRepos();
   }
 
+  // Loop over all items in state and render with Repo component
   render() {
     return (
       <main className="main-container">

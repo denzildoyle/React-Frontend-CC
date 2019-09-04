@@ -3,9 +3,12 @@ import Moment from "moment";
 import PropTypes from 'prop-types';
 import "./Repo.scss";
 
+// Calculate time ago using momentjs
 function timeAgo(date) {
   return Moment(date).fromNow();
 }
+
+// Return template for rendering Repo component
 export default function Repo(props) {
   return (
     <div className="repo">
@@ -27,6 +30,7 @@ export default function Repo(props) {
   );
 }
 
+// Type check the props passed to the Repo component
 Repo.propTypes = {
   description: PropTypes.string,
   avatar: PropTypes.string,
