@@ -6,3 +6,26 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.error{
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 10px;
+  display: block;
+  font-size: 12px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+.show {
+  display: block;
+}
+.hide{
+  display: none;
+}
+
