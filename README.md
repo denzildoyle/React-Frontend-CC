@@ -4,6 +4,10 @@ A small webapp lists the most starred Github repos that were created in the last
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
+
+In the project directory, you can run:
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -27,7 +31,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### License
+## License
 
 (The MIT License)
 
