@@ -10,7 +10,7 @@ export default function Repo(props) {
   return (
     <div className="repo">
       <div className="repo-avatar">
-        <img src={props.avatar} alt="" />
+        <img src={props.avatar} alt={props.owner} />
       </div>
       <div className="repo-details">
         <h2>{props.name}</h2>
