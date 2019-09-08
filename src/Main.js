@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Repo from "./components/Repo";
+import Moment from "moment";
 import "./Main.scss";
 
 export default class Main extends Component {
@@ -26,11 +27,18 @@ export default class Main extends Component {
     }
   };
 
+  daysAgo = (days) => {
+    return Moment().subtract(days, "days").format("YYYY-MM-DD");
+  }
+
   // Load data from Github API
   loadRepos = () => {
     const { page, items, perPage} = this.state;
+    const backDate = this.daysAgo(30);
+
     // Pass page number and number per page to API
-    const API = `https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=${page}&per_page=${perPage}`;
+    const API = `https://api.github.com/search/repositories?q=created:>${backDate}&sort=stars&order=desc&page=${page}&per_page=${perPage}`;
+
     fetch(API)
       .then(response => response.json())
       .then(data => {
