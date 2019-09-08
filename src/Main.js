@@ -43,12 +43,13 @@ export default class Main extends Component {
         });
       })
       // Handle errors
-      .catch(error =>
+      .catch(error => {
+        console.error(error)
+
         this.setState({
-          error: error,
-          isLoading: true
+          error: error
         })
-      );
+      });
   };
 
   // Increase page count and add more items to states  
@@ -63,7 +64,7 @@ export default class Main extends Component {
   render() {
     return (
       <main className="main-container">
-        <div className={this.state.error ? 'show error' : 'error' }>{!this.state.error ? null: <span>There was an error while trying to load app data</span>}</div>
+        <div className={this.state.error ? "show error" : "error" }>{!this.state.error ? null: <span>There was an error while trying to load app data</span>}</div>
         <div>
           {!this.state.isLoading ? (
             this.state.items.map(item => {
@@ -82,7 +83,7 @@ export default class Main extends Component {
             })
           ) : (
             // If there is a delay in data, let's let the user know it's loading
-            <h3 className={this.state.error ? 'hide' : null }>Loading...</h3>
+            <h3 className={this.state.error ? "hide" : null }>Loading...</h3>
           )}
         </div>
       </main>
