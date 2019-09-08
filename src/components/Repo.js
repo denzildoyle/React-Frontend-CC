@@ -1,12 +1,9 @@
 import React from "react";
-import Moment from "moment";
 import PropTypes from 'prop-types';
-import "./Repo.scss";
 
-// Calculate time ago using momentjs
-function timeAgo(date) {
-  return Moment(date).fromNow();
-}
+import {timeAgo} from "./utils";
+
+import "./Repo.scss";
 
 // Return template for rendering Repo component
 export default function Repo(props) {
