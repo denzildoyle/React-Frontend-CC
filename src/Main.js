@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Repo from "./components/Repo";
-import { daysAgo, generateAPIURL } from "./utils";
+import { daysAgo, generateAPIURL } from "./Utils";
 
 import "./Main.scss";
 

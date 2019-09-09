@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {timeAgo} from "../utils";
+import {timeAgo} from "../Utils";
 
 import "./Repo.scss";
 
