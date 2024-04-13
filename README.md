@@ -1,8 +1,8 @@
 # Github Popular Repos
 
-A small webapp listing the most starred Github repos that were created in the last 30 days. Fetched and sorted JSON data directly from the Github API.
+A small webapp listing the most starred Github repos that were created in the last 30 days. Fetched and sorted JSON data directly from the GitHub API.
 
-![alt text](https://raw.githubusercontent.com/denzildoyle/react-frontend-cc/master/repo-feed.png "Github Repo Screen Shot")
+![image](https://github.com/denzildoyle/React-Frontend-CC/assets/1976977/b4eced60-8e28-49d6-9de9-cafd74b673a1)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
